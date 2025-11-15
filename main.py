@@ -1,5 +1,6 @@
 from pygame import *   
-import sounddevice as sd 
+import sounddevice as sd
+import scipy.io.wavfile as wav 
 
 # === Налаштування ===
 fs = 44100     # Частота дискретизації (кількість вимірів за секунду)
@@ -34,8 +35,8 @@ stream.start()
 
 running = True
 while running:
-    for event in event.get():
-        if event.type == QUIT:
+    for e in event.get():
+        if e.type == QUIT:
             running = False
 
     screen.fill((0, 0, 0))
